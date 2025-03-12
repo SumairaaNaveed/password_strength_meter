@@ -1,7 +1,7 @@
 import re
 import streamlit as st
 
-st.set_page_config(page_title="Password Strength Meter", page_icon="🔑")
+st.set_page_config(page_title="Password Strength Meter", page_icon="🔑", layout="centered")
 
 # Custom CSS to style Streamlit components
 st.markdown("""
@@ -27,6 +27,16 @@ st.markdown("""
 
 st.title("🔒 Password Strength Meter") 
 st.write("🔎 **Enter your password below to check its security level.**")
+
+# Password input field
+password = st.text_input("🔑 Enter your password:", type="password", help="Ensure your password is strong 🔒")
+
+# Button to check strength
+if st.button("🔍 Check Strength"):
+    if password:
+        check_password_strength(password)
+    else:
+        st.warning("⚠️ Please enter a password first!")
 
 # Function to check password strength
 def check_password_strength(password):
@@ -67,19 +77,9 @@ def check_password_strength(password):
             for item in feedback:
                 st.write(item)
 
-# Password input field
-password = st.text_input("🔑 Enter your password:", type="password", help="Ensure your password is strong 🔒")
-
-# Button to check strength
-if st.button("🔍 Check Strength"):
-    if password:
-        check_password_strength(password)
-    else:
-        st.warning("⚠️ Please enter a password first!")
-
-
-   
-
+  
+    
+           
 
               
                      
