@@ -1,7 +1,7 @@
 import re
 import streamlit as st
 
-st.set_page_config(page_title="Password Strength Meter", page_icon="🔑", layout="centered")
+st.set_page_config(page_title="Password Strength Meter", page_icon="🔑")
 
 # Custom CSS to style Streamlit components
 st.markdown("""
